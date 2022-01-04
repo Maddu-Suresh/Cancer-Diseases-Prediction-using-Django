@@ -1,0 +1,106 @@
+{% load static %}
+<html>
+<head>
+<style>
+  button {
+    background-color:#FF6347;
+    color:black;
+    font-size:20px ;
+    font-family:Roboto Mono;
+    height:50px;
+    border:3px solid;
+    border-radius:80px;
+    cursor: pointer;
+    width:200px;
+    box-shadow: none;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+  body{
+      background:url({% static 'images/bgimage.jpg' %});
+
+       background-size:cover;
+
+    }
+x
+{
+  color : white;
+  font-size : 20px;
+  text-decoration : none;
+}
+x:hover
+{
+  color : yellow;
+  font-size : 24px;
+}
+   #leftbox
+   {
+                float:left;
+                background:#A9A9A9;
+                width:49%;
+                height:520px;
+                border-radius:25px;
+                border:1px solid #008B8B;
+   }
+   #rightbox
+   {
+                float:right;
+                background:#A9A9A9;
+                width:49%;
+                height:520px;
+                 border-radius:25px;
+                 border:1px solid #008B8B;
+
+
+   }
+
+
+
+</style>
+</head>
+<body>
+<form method="get" action="/" style="float:right">
+    <button type="submit">LOGOUT ➝</button>
+</form>
+<table border='0' width="100%" cellspacing="0" cellpadding="0"  align="center"  >
+<tr height="30px">
+<td width=6%></td>
+</table>
+<table border='0' width="100%" cellspacing="0" cellpadding="0"  align="center" >
+<tr height="20px">
+     <div id = "leftbox">
+               <center><h2><u>LUNG CANCER</u></h2></center>
+          <center><img src="{% static 'images/lungcancer.jpg' %}" height="150px" width="300px" border="2px" ></center><br>
+               <p>Lung cancer is a type of cancer that begins in the lungs. Your lungs are two spongy organs in your chest that take in oxygen when you inhale and release carbon dioxide when you exhale.
+Lung cancer is the leading cause of cancer deaths worldwide.
+People who smoke have the greatest risk of lung cancer, though lung cancer can also occur in people who have never smoked.<br>The risk of lung cancer increases with the length of time and number of cigarettes you've smoked. If you quit smoking, even after smoking for many years, you can significantly reduce your chances of developing lung cancer.</p>
+    <br>
+         <br>
+     <center><form method="get" action="lcancer" style="font-size: 0px">
+    <button type="submit">LUNG CANCER</button>
+</form></center>
+     </div>
+
+            <div id = "rightbox">
+                <center><h2><u>BREAST CANCER</u></h2></center>
+                <center><img src="{% static 'images/breastcancer.jpg' %}" height="150px" width="300px" border="2px" ></center><br>
+               <p>Breast cancer is cancer that forms in the cells of the breasts.
+After skin cancer, breast cancer is the most common cancer diagnosed in women in the United States. Breast cancer can occur in both men and women, but it's far more common in women.
+Substantial support for breast cancer awareness and research funding has helped created advances in the diagnosis and treatment of breast cancer. <br> Breast cancer survival rates have increased, and the number of deaths associated with this disease is steadily declining, largely due to factors such as earlier detection, a new personalized approach to treatment and a better understanding of the disease.</p>
+                <center><form method="get" action="bcancer" style="font-size: 0px" >
+    <button type="submit">BREAST CANCER</button>
+                </form></center>
+            </div>
+
+</form></center>
+            </div>
+        </div>
+</tr>
+</table>
+</body>
+{% block content %}  {% endblock %}
+</html>
+
+

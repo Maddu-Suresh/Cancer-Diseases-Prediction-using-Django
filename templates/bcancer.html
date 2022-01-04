@@ -1,0 +1,249 @@
+{% load static %}
+<html>
+  <head>
+      <title>breast data</title>
+      <style>
+      html, body
+      {
+      min-height: 100%;
+      background:url({% static 'images/bgimage.jpg' %});
+      background-size:cover;
+      }
+      body, div, form, input, select, textarea, label {
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 20px;
+      }
+      h1 {
+      position: absolute;
+      margin:0;
+      font-size: 60px;
+      color: green;
+      line-height: 83px;
+      top:50px;
+      }
+      legend {
+      padding: 10px;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 18px;
+      color: white;
+      background-color: #1c87c9;
+      border-radius:5px;
+      }
+      .testbox {
+      display: flex;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 10px;
+      background: #FFFAFA;
+      box-shadow: 0 0 8px #006622;
+      }
+      .banner {
+      position: relative;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius:10px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+       .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 3px 0  #006622;
+      color: #006622;
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      }
+      .colums div {
+      width:48%;
+      }
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background:  #1c87c9;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background:  #0692e8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+    <form action="breastpredict" method="post">
+      <div class="banner">
+        <h1>BREAST CANCER</h1>
+      </div>
+      <br/>
+      <fieldset>
+        <legend>Enter The Details</legend>
+   {% csrf_token %}
+        <div class="colums">
+          <div class="item">
+            <label><b>Mean_Radius</b></label>
+            <input type="text" name="meanradius" required>
+          </div>
+          <div class="item">
+             <label><b>Mean_Texture</b></label>
+            <input type="text" name="meantexture" required>
+          </div>
+          <div class="item">
+            <label><b>Mean_Perimeter</b></label>
+            <input type="text" name="meanperimeter" required>
+          </div>
+          <div class="item">
+            <label><b>Mean_Area</b></label>
+            <input type="text" name="meanarea" required>
+          </div>
+          <div class="item">
+            <label><b>Mean_Smoothness</b></label>
+            <input type="text" name="meansmoothness" required>
+          </div>
+          <div class="item">
+           <label><b>Mean_Compactness</b></label>
+            <input type="text" name="meancompactness" required>
+          </div>
+          <div class="item">
+            <label><b>Mean_Concavity</b></label>
+            <input type="text" name="meanconcavity" required>
+          </div>
+          <div class="item">
+           <label><b>Mean_Concave_Points</b></label>
+            <input type="text" name="meanconcavepoints" required>
+          </div>
+          <div class="item">
+           <label><b>Mean_Symmetry</b></label>
+            <input type="text" name="meansymmetry" required>
+          </div>
+          <div class="item">
+           <label><b>Mean_Fractal_Dimension</b></label>
+            <input type="text" name="meanfractaldimension" required>
+          </div>
+          <div class="item">
+           <label><b>Radius_Error</b></label>
+            <input type="text" name="radiuserror" required>
+          </div>
+          <div class="item">
+           <label><b>Texture_Error</b></label>
+            <input type="text" name="textureerror" required>
+          </div>
+          <div class="item">
+           <label><b>Perimeter_Error</b></label>
+            <input type="text" name="perimetererror" required>
+          </div>
+          <div class="item">
+           <label><b>Area_Error</b></label>
+            <input type="text" name="areaerror" required>
+          </div>
+          <div class="item">
+           <label><b>Smoothness_Error</b></label>
+            <input type="text" name="smoothnesserror" required>
+          </div>
+          <div class="item">
+           <label><b>Compactness_Error</b></label>
+            <input type="text" name="compactnesserror" required>
+          </div>
+          <div class="item">
+           <label><b>Concavity_Error</b></label>
+            <input type="text" name="concavityerror" required>
+          </div>
+          <div class="item">
+           <label><b>Concave_Points_Error</b></label>
+            <input type="text" name="concavepointserror" required>
+          </div>
+           <div class="item">
+           <label><b>Symmetry_Error</b></label>
+            <input type="text" name="symmetryerror" required>
+          </div>
+           <div class="item">
+           <label><b>Fractal_Dimension_Error</b></label>
+            <input type="text" name="fractaldimensionerror" required>
+          </div>
+           <div class="item">
+           <label><b>Worst_Radius</b></label>
+            <input type="text" name="worstradius" required>
+          </div>
+           <div class="item">
+           <label><b>Worst_Texture</b></label>
+            <input type="text" name="worsttexture" required>
+          </div>
+          <div class="item">
+           <label><b>Worst_Perimeter</b></label>
+            <input type="text" name="worstperimeter" required>
+          </div>
+             <div class="item">
+           <label><b>Worst_Area</b></label>
+            <input type="text" name="worstarea" required>
+          </div>
+             <div class="item">
+           <label><b>Worst_Smoothness</b></label>
+            <input type="text" name="worstsmoothness" required>
+          </div>
+             <div class="item">
+           <label><b>Worst_Compactness</b></label>
+            <input type="text" name="worstcompactness" required>
+          </div>
+            <div class="item">
+           <label><b>Worst_Concavity</b></label>
+            <input type="text" name="worstconcavity" required>
+          </div>
+            <div class="item">
+           <label><b>Worst_Concave_Points</b></label>
+            <input type="text" name="worstconcavepoints" required>
+          </div>
+            <div class="item">
+           <label><b>Worst_Symmetry</b></label>
+            <input type="text" name="worstsymmetry" required>
+          </div>
+            <div class="item">
+           <label><b>Worst_Fractal_Dimension</b></label>
+            <input type="text" name="worstfractaldimension" required>
+          </div>
+        </div>
+      </fieldset>
+            <div class="btn-block">
+      <button type="submit">PREDICT</button>
+      </div>
+    </form>
+    </div>
+  </body>
+</html>

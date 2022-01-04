@@ -1,0 +1,215 @@
+{% load static %}
+<html>
+<head>
+<title> Breast Cancer Prediction</title>
+<style>
+body
+      {
+      background-color:#FFF5EE;
+      background-size:cover;
+      border:2px solid;
+      border-radius:10px;
+      }
+      body, div, form, input, select, textarea, label {
+      padding:10px;
+      margin:2px solid;
+      outline: none;
+      font-family:cambria;
+      font-size: 14px;
+      font-weight:bold;
+      color: black;
+      line-height: 20px;
+
+      }
+      .testbox {
+      display: flex;
+      padding: 20px;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      }
+      .colums div {
+      width:48%;
+      }
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background:  #1c87c9;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background:  #0692e8;
+      }
+</style>
+</head>
+
+<body>
+<div>
+        <h1>Hello {{user.first_name}}</h1>
+    <br>
+    <h2><u>Based on the details given:</u></h2></div>
+    <div class="testbox">
+    <div class="colums">
+          <div class="item">
+              <h2> Mean_Radius:{{meanradius}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Mean_Texture:{{meantexture}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Mean_Perimeter:{{meanperimeter}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Mean_Area:{{meanarea}}</h2>
+          </div>
+
+
+          <div class="item">
+              <h2>Mean_Smoothness:{{meansmoothness}}</h2>
+          </div>
+
+
+          <div class="item">
+             <h2>Mean_Compactness:{{meancompactness}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Mean_Concavity:{{meanconcavity}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Mean_Concave_Points:{{meanconcavepoints}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Mean_Symmetry:{{meansymmetry}}</h2>
+          </div>
+
+
+          <div class="item">
+              <h2>Mean_Fractal_Dimension:{{meanfractaldimension}}</h2>
+          </div>
+
+
+          <div class="item">
+              <h2>Radius_Error:{{radiuserror}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Texture_Error:{{textureerror}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Perimeter_Error:{{perimetererror}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Area_Error:{{areaerror}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Smoothness_Error:{{smoothnesserror}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Compactness_Error:{{compactnesserror}}</h2>
+          </div>
+
+
+          <div class="item">
+            <h2>Concavity_Error:{{concavityerror}}</h2>
+          </div>
+
+          <div class="item">
+            <h2>Concave_Points_Error:{{concavepointserror}}</h2>
+          </div>
+
+          <div class="item">
+            <h2>Symmetry_Error:{{symmetryerror}}</h2>
+          </div>
+
+          <div class="item">
+            <h2>Fractal_Dimension_Error:{{fractaldimensionerror}}</h2>
+          </div>
+
+        <div class="item">
+            <h2>Worst_Radius:{{worstradius}}</h2>
+        </div>
+
+       <div class="item">
+        <h2>Worst_Texture:{{worsttexture}}</h2>
+       </div>
+
+       <div class="item">
+        <h2>Worst_Perimeter:{{worstperimeter}}</h2>
+       </div>
+
+        <div class="item">
+            <h2>Worst_Area:{{worstarea}}</h2>
+       </div>
+
+         <div class="item">
+            <h2>Worst_Smoothness:{{worstsmoothness}}</h2>
+       </div>
+
+         <div class="item">
+        <h2>Worst_Compactness:{{worstcompactness}}</h2>
+       </div>
+
+         <div class="item">
+        <h2>Worst_Concavity:{{worstconcavity}}</h2>
+       </div>
+
+         <div class="item">
+        <h2>Worst_Concave_Points:{{worstconcavepoints}}</h2>
+       </div>
+
+         <div class="item">
+        <h2>Worst_Symmetry:{{worstsymmetry}}</h2>
+       </div>
+
+         <div class="item">
+         <h2>Worst_Fractal_Dimension:{{worstfractaldimension}}</h2>
+       </div>
+
+    </div>
+    </div>
+<div class="item">
+    <p style="color:red;font-size:30px;"> Result : You Are {{breastcancer}}</p></div>
+    <form method="get" action="/" >
+    <div class="btn-block">
+        <h3><center><button type="submit" >LOGOUT</button></center></h3>
+    </div>
+    </form>
+</body>
+</html>
